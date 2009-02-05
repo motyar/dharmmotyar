@@ -4,7 +4,95 @@
 	
 		<title>Sample</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" media="all" href="Xstyle-complete.css">
+		
+		<style type="text/css" >
+		    
+		    
+	/* Global reset */
+	/* Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
+	
+	*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h5, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+	table { border-collapse:collapse; border-spacing:0 }
+	fieldset, img { border:0 }
+	address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+	ol, ul, li { list-style:none }
+	caption, th { text-align:left }
+	h1, h2, h3, h5, h5, h6 { font-size:100% }
+	q:before, q:after { content:''}
+
+
+
+
+
+	/* Global reset-RESET */
+	/* The below restores some sensible defaults */
+	
+	strong { font-weight: bold }
+	em { font-style: italic }
+	ol, ul, li { list-style:none }
+	* a { position:relative } /* Gets links displaying over a PNG background */
+	a { outline:none } /* Gets rid of Firefox's dotted borders */
+	a img { border:none } /* Gets rid of IE's blue borders */
+
+
+
+
+
+	/* Typography */
+	
+	p { margin:2px 0 16px 0 }
+	body, h4, p, li, dt, dd, label, input, textarea { font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif }
+	p, li, dt, dd, label { font-size:11px; line-height:18px }
+	a { color:#000; text-decoration:none }
+	a:hover { color:#fff; background:#000 }
+	
+	h1 { background:url(images/h1.gif); width:143px; height:538px; text-indent:40px; position:absolute; top:0; right:-120px }
+	h2 { background:url(images/h2.gif); width:775px; height:426px; text-indent:40px }	
+	
+	
+
+	
+	
+	/* Main layout */	
+		
+	body { color:#000; text-align:left; background:#fff url(images/bg.gif); margin:-1px 0 0 0 }
+	
+	div.wrapper { width:830px; position:relative; background:#fff }
+	
+	ul.nav { background:url(images/nav.gif); width:637px; height:71px; position:absolute; top:1px; left:0 }
+	ul.nav li a { position:absolute; top:0; text-indent:40px; display:block; height:71px }
+	ul.nav li.navHome a { left:0; width:244px }
+	ul.nav li.navAbout a { left:279px; width:75px }
+	ul.nav li.navPortfolio a { left:395px; width:99px }
+	ul.nav li.navContact a { left:533px; width:97px }
+	ul.nav li a:hover { text-indent:0 }
+		
+	ol.entries { margin:50px 58px 0 0}
+	ol.entries li { text-align:right; position:relative }
+	ol.entries li h3 { font-size:20px; line-height:20px; border-bottom:1px solid #000 }
+	ol.entries li p { padding:0 0 0 520px }
+	ol.entries li p.meta span { position:absolute; top:27px; right:400px; font-size:60px; line-height:30px; width:50px }
+	ol.entries li p a { font:italic 30px/30px Georgia, 'Times New Roman', Times, serif }
+	
+	ul.extras { position:absolute; top:540px; left:0 }
+	ul.extras li ul li { margin:10px 0 } 
+	ul.extras li ul li a { padding:5px 20px; color:#fff; background:#000 }
+	ul.extras li ul li a:hover { margin:0 0 0 10px }
+	ul.extras li.categories { margin:0 0 50px 0 }
+	ul.extras li.categories h3 { background:url(images/categories.gif); width:245px; height:63px; text-indent:40px }
+	ul.extras li.categories ul li a { }
+	ul.extras li.blogroll h3 { background:url(images/blogroll.gif); width:158px; height:84px; text-indent:40px }
+	ul.extras li.blogroll ul li a { }
+	
+	div.contact { background:url(images/contact.gif); width:900px; height:276px; text-indent:40px; margin:50px 0 0 0; position:relative }
+	a.emailLink { width:900px; height:276px; display:block; position:absolute; top:0; left:0 }
+	a.emailLink:hover { background:none }
+	
+	
+	
+	
+	
+		</style>
 	</head><body>
 	<div class="wrapper">
 	
