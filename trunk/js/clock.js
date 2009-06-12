@@ -1,13 +1,24 @@
 
-
 var imageclock=new Object()
 	//Enter path to clock digit images here, in order of 0-9, then "am/pm", then colon image:
-	imageclock.digits=["c0.gif", "c1.gif", "c2.gif", "c3.gif", "c4.gif", "c5.gif", "c6.gif", "c7.gif", "c8.gif", "c9.gif", "cam.gif", "cpm.gif", "colon.gif"]
+	imageclock.digits=["c0.gif", 
+                         "c1.gif", 
+                         "c2.gif", 
+                         "c3.gif", 
+                         "c4.gif", 
+                         "c5.gif", 
+                         "c6.gif", 
+                         "c7.gif", 
+                         "c8.gif",
+                          "c9.gif",
+                           "cam.gif", 
+                           "cpm.gif", 
+                           "colon.gif"]
 	imageclock.instances=0
 	var preloadimages=[]
 	for (var i=0; i<imageclock.digits.length; i++){ //preload images
 		preloadimages[i]=new Image()
-		preloadimages[i].src=imageclock.digits[i]
+		preloadimages[i].src="images/clockimages/"+imageclock.digits[i]
 	}
 
 	imageclock.imageHTML=function(timestring){ //return timestring (ie: 1:56:38) into string of images instead
