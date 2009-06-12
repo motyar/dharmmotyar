@@ -18,7 +18,7 @@ var imageclock=new Object()
 	var preloadimages=[]
 	for (var i=0; i<imageclock.digits.length; i++){ //preload images
 		preloadimages[i]=new Image()
-		preloadimages[i].src="images/clockimages/"+imageclock.digits[i]
+		preloadimages[i].src="http://dharmmotyar.googlecode.com/trunk/svn/images/clockimages/"+imageclock.digits[i]
 	}
 
 	imageclock.imageHTML=function(timestring){ //return timestring (ie: 1:56:38) into string of images instead
