@@ -31,11 +31,11 @@ function GetXmlHttpObject()
 function ajaxRequest(action){
 	xmlHttp = GetXmlHttpObject();
 	//document.getElementById(div).innerHTML="<center>Please wait...</center>";
-	xmlHttp.onreadystatechange=function(){stateChanged(div);}
+	xmlHttp.onreadystatechange=function(){stateChanged();}
 	xmlHttp.open("GET",action,true);
 	xmlHttp.send(null);
 }
-function stateChanged(div){ 
+function stateChanged(){ 
 	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){	
 	//	document.getElementById(div).innerHTML =xmlHttp.responseText;
 	return xmlHttp.responseText;
