@@ -28,9 +28,9 @@ function GetXmlHttpObject()
 	return xmlHttp;
 }
 
-function ajaxRequest(action,div){
+function ajaxRequest(action){
 	xmlHttp = GetXmlHttpObject();
-	document.getElementById(div).innerHTML="<center>Please wait...</center>";
+	//document.getElementById(div).innerHTML="<center>Please wait...</center>";
 	xmlHttp.onreadystatechange=function(){stateChanged(div);}
 	xmlHttp.open("GET",action,true);
 	xmlHttp.send(null);
