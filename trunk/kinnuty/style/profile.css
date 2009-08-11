@@ -1,0 +1,204 @@
+/* CSS Document */
+
+html, body {
+	padding:0px;
+	margin:0px;
+}
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	
+}
+
+#wrapper{
+width:850px;
+margin:auto;
+padding:0px;
+height:auto;
+}
+#header{
+float:left;
+width:850px;
+height:50px;
+//border:1px solid #000000;
+margin-top:15px;
+}
+#header .logo{
+float:left;
+padding-left:0px;
+width:50px;
+height:50px;
+background:url(../images/sinaasappelhelft.png) no-repeat left;
+}
+#header .welcome_msg{
+float:left;
+width:720px;
+height:50px;
+line-height:50px;
+text-align:center;
+background:#FF9900;
+margin-left:15px;
+margin-right:15px;
+font-size:15px;
+}
+
+
+#nav{
+float:left;
+margin-top:25px;
+width:750px;
+height:40px;
+line-height:40px;
+padding-left:130px;
+white-space:nowrap;
+
+
+}
+#nav ul{
+padding:0px;
+margin:0px;
+float:left;
+}
+#nav ul li{
+list-style:none;
+display:inline;
+}
+#nav ul li a{
+float:left;
+padding-left:47px;
+padding-right:47px;
+text-decoration:none;
+color:#000000;
+text-transform:uppercase;
+font-size:11px;
+text-align:center;
+font-weight:bold;
+}
+
+#nav ul li a:hover{
+background-position:bottom;
+background:#FF8C21;
+}
+
+#content{
+float:left;
+margin-top:25px;
+width:850px;
+border:1px solid #000000;
+}
+#content .left_content{
+float:left;
+width:200px;
+height:auto;
+
+}
+#content .left_content .menus{
+float:left;
+width:200px;
+}
+#content .left_content .menus ul{
+padding:0px;
+margin:0px;
+}
+#content .left_content .menus ul li{
+list-style:none;
+padding-top:7px;
+padding-bottom:7px;
+padding-right:7px;
+background:#CCCCCC;
+border-bottom:1px solid #B2B2B2;
+padding-left:7px;
+}
+#content .left_content .menus ul li a{
+
+text-decoration:none;
+color:#000000;
+text-transform:uppercase;
+}
+#content .left_content .menus ul li a:hover{
+display:block;
+background:url(../images/sinaasappelhelft.png) no-repeat right;
+}
+
+#content .left_content .UserImage{
+float:left;
+width:200px;
+height:250px;
+}
+#content .left_content .empty_box{
+float:left;
+width:200px;
+height:250px;
+padding-top:25px;
+margin-top:10px;
+
+}
+#content .right_content{
+float:left;
+width:600px;
+height:auto;
+}
+
+#content .right_content .think_box{
+float:left;
+width:575px;
+padding-top:15px;
+padding-left:25px;
+}
+.heading{
+font-size:13px;
+font-weight:bold;
+}
+#content .right_content .work_area{
+float:left;
+width:575px;
+height:auto;
+margin-top:25px;
+padding-left:25px;
+}
+#content .right_content .friend_think{
+float:left;
+width:575px;
+padding-left:25px;
+margin-top:25px;
+}
+#footer{
+float:left;
+width:852px;
+height:25px;
+margin-top:25px;
+margin-bottom:25px;
+border-top:1px solid #CCCCCC;
+
+}
+#footer ul{
+
+float:left;
+padding:0px;
+margin:0px;
+padding-left:230px;
+text-align:center;
+}
+#footer ul li{
+display:inline;
+
+line-height:25px;
+border-right:1px solid #000000;
+padding-left:7px;
+padding-right:7px;
+}
+#footer ul li.last{
+border:none;
+}
+
+#footer ul li a{
+text-decoration:none;
+color:#000000;
+font-weight:bold;
+text-transform:uppercase;
+}
+#footer ul li a:hover{
+text-decoration:underline;
+color:#000000;
+font-weight:bold;
+}

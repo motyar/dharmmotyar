@@ -1,0 +1,1 @@
+//footer for profile pages

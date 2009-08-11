@@ -1,0 +1,281 @@
+<?php
+  
+ include('includes/function.php');
+   
+  include('class/search_class.php');
+  include('includes/session.php');
+
+   databaseconnect();
+	
+    $usrid=$_SESSION['userid'];
+	
+	$_SESSION['startn']=0;
+	
+     $myname='';
+	 $myreqmsg='';
+	  $record='';
+	  $start='';
+       if(isset($_REQUEST['nxt'])) {
+		   $_SESSION[startn]+=1;
+		   ShowSearch();
+
+	   }
+        
+        
+
+
+  function AearchAdd($id,$name,$picture,$college,$searchid) {   
+        $result="INSERT INTO fre_search_rec(idsp,firstname,picture,collegename,searchid) VALUES('$id','$name','$picture','$college','$searchid')";
+		   mysql_query($result);
+      
+          }
+   function TotalSearch() {
+      $result=mysql_query("SELECT * FROM fre_search_rec WHERE idsp='$_SESSION[userid]'");
+	  $_SESSION['extra']=mysql_num_rows($result);
+	  $_SESSION['len']=ceil($_SESSION['extra']/6);
+	  //echo $_SESSION['len'];
+   }
+
+		
+
+
+	      
+
+
+ ?>
+  <fieldset style="border:0px dotted;padding-top:1px; font-size:25px; color:#666633; padding-bottom:10px;"><center>
+ KINNUTY SEARCH</center></fieldset>
+ <?php
+   
+  
+
+
+	if(isset($_GET['edit'])) {
+      $result=mysql_query("SELECT * FROM record WHERE iduser='$_SESSION[userid]'");
+	  while($row=mysql_fetch_array($result)) {
+		  
+		  $myname=$row['firstname'];
+		  echo $myname;
+		  $myreqmsg=$row['friendrm'];
+	  }
+        $result="INSERT INTO frndreq(recid,senderid,reqmsg,sendername) VALUES('$_REQUEST[edit]','$_SESSION[userid]','$myreqmsg','$myname')";
+		   mysql_query($result);
+
+       
+		 }
+
+
+
+?>
+<html>
+<head>
+ <style>
+   .sendreq{
+	   float:right;
+    color:red;
+	font-size:14px;
+	margin-left:25px;
+	height:25px;
+
+	}
+   .sendreq a{
+   text-decoration:none;
+   background:#000000;
+   color:#FFFFFF;
+   padding:4px 4px 4px 4px;
+   }
+   .sendreq a:hover{
+   color:#000000;
+   background:#FFFFFF;
+   }
+   table tr td{
+   padding:0px;
+   margin:0px;
+    padding-top:5px;
+   padding-right:20px;
+  
+   }
+
+
+ </style>
+<script language="javascript">
+
+
+
+ function SearchValid() {
+var frndname=document.getElementById('srcfriendi').value;
+ if(frndname=='') {
+ alert('Please Enter Name of Student of Search');
+ return false;
+ }
+ else 
+	 {
+   return true;
+   }
+   
+   }
+ 
+
+
+
+
+</script>
+</head>
+<body bgcolor=white>
+
+<form method='post' action='http://localhost/kinnuty_com/profile1.php?tab=friends&service=searchfriend' onSubmit="return SearchValid()">
+ 
+ <font color='red'>
+ Friend Name</font><input type='text' name='srcfriend' id='srcfriendi' value='<?php echo $_SESSION['srcname']; ?>'/>
+ <input type='submit' name='searchfriend' value='Search Friend'/>
+ </form> 
+<?php
+            if(isset($_POST['searchfriend'])) {  
+				//echo "Your Searching Word".$_REQUEST['srcfriend'];
+				 $_SESSION['srcname']=$_REQUEST['srcfriend'];
+	   mysql_query("DELETE FROM fre_search_rec WHERE idsp='$_SESSION[userid]'");		   
+         $result=mysql_query("SELECT * FROM record WHERE firstname LIKE '$_REQUEST[srcfriend]%' ");
+		 $_SESSION['srcname']=$_REQUEST['srcfriend'];
+           while($row=mysql_fetch_array($result)) { 
+                AearchAdd($_SESSION[userid],$row['firstname'],$row['picture'],$row['collegename'],$row['iduser']);			  	  
+		           }
+            		ShowSearch();
+					
+		           	}
+		if(isset($_GET['frndshow'])) {
+		  $Ob=new FriendData($_REQUEST['frndshow']);
+       //$Ob->FriendSetData($_REQUEST['frndshow']);
+	     $Ob->ShowData();
+		
+		   }
+	            
+		//  Show The Basic Information Of Search Friend		
+				
+				if(isset($_GET['frndshowbasic'])){
+				  $Ob=new FriendData($_REQUEST['frndshowbasic']);
+				  $Ob->ShowData();
+        
+                 }
+
+      //  Show The Personal Information Of Search Friend	
+
+                   if(isset($_GET['frndshowpersonal'])){
+					    $Ob=new FriendData($_REQUEST['frndshowpersonal']);		
+						$Ob->ShowFr_Personal();      
+                             }
+      //  Show The Contact Information Of Search Friend
+
+                    if(isset($_GET['frndshowcontact'])){
+					    $Ob=new FriendData($_REQUEST['frndshowcontact']);		
+						$Ob->ShowFr_Contact();      
+                             }
+       //  REquest To Friend  
+	   
+					if(isset($_GET['frndrequest'])){
+					 $Ob=new FriendData($_REQUEST['frndrequest']);
+					       for_message();
+                        $Ob->Send_Request($_SESSION['msg']);
+						
+					
+					
+					}
+                   
+                function for_message(){
+					$result=mysql_query("SELECT * FROM record WHERE iduser='$_SESSION[userid]'");
+                     while($row=mysql_fetch_array($result)) {         
+				      $_SESSION['msg']=$row['friendrm'];
+					  $Name_Sender=$row['firstname'];                    					 					} 
+				
+				 }
+
+
+         // Send Request to Friend
+		 
+				    if(isset($_POST['reqsend'])){
+						$msg='';
+						$Name_Sender='';
+						/*echo $_REQUEST['Request_Msg'];
+						echo $_SESSION['userid'];
+						echo $_SESSION['usernam'];
+						echo $_REQUEST['friendid'];*/
+           $result=mysql_query("SELECT * FROM record WHERE iduser='$_SESSION[userid]'");
+            while($row=mysql_fetch_array($result)) {
+                  
+				      $msg=$row['friendrm'];
+					  $Name_Sender=$row['firstname'];                    					 					} 
+					 
+
+                     $result=mysql_query("INSERT INTO frndreq(recid,senderid,reqmsg,sendername) VALUES('$_REQUEST[friendid]','$_SESSION[userid]',' $_REQUEST[Request_Msg]','$Name_Sender')");
+
+					
+					
+              echo '<label
+			  style="color:#003A68;
+			  font-family:monotype corsiva;
+			  font-size:20px;
+			  ">
+			  Your Request Has Been Sent.....
+			  </label>';
+					
+					}
+		                          
+
+
+		
+
+    if(isset($_GET['nextp'])) {
+		$number=$_REQUEST['nextp'];
+	  $_SESSION['startn']=6*($number-1);
+	   ShowSearch();
+	} 	
+
+
+
+   function ShowSearch() {
+	   TotalSearch();
+	    $countr=0;
+		echo "<font size='3' color='blue'></font>";
+		echo "<center><label style='color:white; width:21px; color:#000000;'>";
+		echo $_SESSION['srcname'];
+		echo "</label></center>";
+        $result=mysql_query("SELECT * FROM fre_search_rec WHERE idsp='$_SESSION[userid]' LIMIT $_SESSION[startn],6");
+		?><table class="srch"  style=" padding:0px; margin-top:15px;"><tr><?php
+		while($row=mysql_fetch_array($result)) {
+			 $countr++;
+			?>
+          <td width="156">  
+		<a href='http://localhost/kinnuty_com/profile1.php?tab=friends&service=searchfriend&frndshowbasic=<?php echo $row['searchid']; ?>'> 
+		<img src="<?php echo $row['picture'];?>"  height=80 width=87 title='<?php   echo 'Friend From  '.$row['collegename'] ?>'/></a><br>
+		
+    </td>
+			   <td width="216" valign='top'>
+<font color=#FF8C21 size=4>Name:</font><?php
+		echo "<font color=#000000 size=3>".$row['firstname']."</font>";
+			   ?><br>
+male			   </td>
+			   		   <td width="305" valign='top'>
+<font color=#FF8C21 size=4>College:</font><?php   echo $row['collegename'] ?> </td>
+
+			   <?php
+                  if($countr%1==0) {
+                    ?></tr> <?php
+			  }
+		       }
+            ?></table><?php
+				for($i=1;$i<=$_SESSION['len'];$i++) {
+			     ?><a style="text-decoration:none;"
+				 href='http://localhost/createnewpage/index1.php?page=searchfriend&nextp=<?php echo $i ?>'><b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $i ;?></b></a><?php
+
+					 
+				}
+             
+
+		      }  
+ 	
+			
+			
+			
+			?>
+
+</body>
+</html>

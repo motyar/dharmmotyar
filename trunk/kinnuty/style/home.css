@@ -1,0 +1,16 @@
+/* CSS Document */
+table tr td{
+font-size:15px;
+
+}
+table tr td.head{
+
+font-weight:bold;
+text-align:left;
+color:#FF8C21
+}
+table tr td.matter{
+
+text-align:left;
+padding-left:50px;
+}
