@@ -6,6 +6,14 @@
 	<link rel="shortcut icon" href="images/orange.gif" >
     <title>Kinnuty</title>
     <link rel="stylesheet" type="text/css" href="../style/mobile.css">
+	 <!--<script src="http://dharmmotyar.googlecode.com/svn/trunk/js/jquery.js"></script>
+	<script>
+     $(document).ready(function(){          
+       $("#grow").click(function () {
+                                    $.post("sms/smsme.php", { msg: "Kinnuty" } ); // sends post field to the script
+                         });
+     });
+    </script>-->
   </head>
   <body>
       <?php include_once('../includes/Xheader.php'); ?>
@@ -20,7 +28,7 @@ Kinnuty news for you
 <div class="g-section g-tpl-100-100">
   <div class="g-unit g-first">
     <div class="mgc-p">
-				<p><strong>Share</strong> your education material with all kinutizens. Download and submit notes, papers, and other study matterials for free. Stay connected with your friends and college with Kinnuty alerts and other kinnuty products.
+				<p><strong>Share</strong> your education matterials with all kinutizens. Download and submit notes, papers, and other study matterials for free. Stay connected with your friends and college with Kinnuty alerts and other kinnuty products.
 				Stay connected with your friends and college with Kinnuty alerts and other
 				kinnuty products. Check below to find out which products are available
 				from <strong>kinnuty</strong>. To find out more be a <strong>Kinnutizen</strong></p>
@@ -33,7 +41,6 @@ Kinnuty news for you
  </div>
  </div>
   </div>
-
 
 </div>
 <?php
@@ -61,11 +68,11 @@ $news->getRSS();
   <ul id="help-center">
     <li>Learn more in the <a  href="http://groups.google.com/group/kinnuty">Help Centre</a></li>
     <li>Ask your questions in our <a href="http://groups.google.com/group/kinnuty">Help Forum</a></li>
-    <li><a href="../ideas/index.php">Share your ideas</a></li>
+    <li><a href="shareideas.php">Share your ideas</a></li>
   </ul>
 </div>
 </div>
-	<?php include_once('../includes/Xfooter.php');?>
+	<?php include_once('../includes/footer.php');?>
   </body>
   </html>
 

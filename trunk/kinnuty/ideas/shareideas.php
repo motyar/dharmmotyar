@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="images/orange.gif" >
     <title>Kinnuty</title>
     <link rel="stylesheet" type="text/css" href="style/mobile.css">
-	 <!--<script src="http://dharmmotyar.googlecode.com/svn/trunk/js/jquery.js"></script>
+	<!--<script src="http://dharmmotyar.googlecode.com/svn/trunk/js/jquery.js"></script>
 	<script>
      $(document).ready(function(){          
        $("#grow").click(function () {
@@ -33,25 +33,25 @@
                     <li><a href="http://kinnuty.000space.com/index.php">Signin</a></li>
                     <li><a href="http://yenkyfriend.000space.com/signup.php">Signup</a></li>
                     <li><a href="news.php">News</a></li>
-                   <li class="top-nav-title">Edushare</li>
-                    <li><a href="shareideas.php">Suggestion</a></li>
+                    <li><a href="edushare.php">Edushare</a></li>
+                    <li class="top-nav-title">Suggestion</li>
                     <li><a href="http://labs.google.co.in/smschannels/subscribe/kinnutysms">SMS</a></li>
                   </ul>
       	  </div>
 	</div>
 </div>
 <div class="title-icon platform">
-  <img src="images/edushare.png" alt="orangefull" id="grow" height="65px" width="65px">
+  <img src="images/Ideas.png" alt="orangefull" id="grow" height="65px" width="65px">
 </div>
 <div class="title-title">
   <h3>
-Kinnuty edushare for you
+Your opinion is important for us.
 </h3>
 </div>
-<div class="g-section g-tpl-100-100">
+<div class="g-section g-tpl-110-100">
   <div class="g-unit g-first">
     <div class="mgc-p">
-				<p><strong>Share</strong> your education matterials with all kinutizens. Download and submit notes, papers, and other study matterials for free. Stay connected with your friends and college with Kinnuty alerts and other kinnuty products.
+				<p><strong>Kinnuty</strong> is totaly focused on kinnutizens, after all its for you so your openion is very important for us. Feel free to <strong>Share</strong> your ideas about this site. Please let us know what you hope more, we are want serve you more. Stay connected with your friends and college with Kinnuty alerts and other kinnuty products.
 				Stay connected with your friends and college with Kinnuty alerts and other
 				kinnuty products. Check below to find out which products are available
 				from <strong>kinnuty</strong>. To find out more be a <strong>Kinnutizen</strong></p>

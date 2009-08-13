@@ -3,7 +3,10 @@
  * all domains.
  */
 
-@import url("gcs.css");
+@import url("http://www.google.com/css/gcs.css");
+@import url("http://www.google.com/css/layout.css");
+@import url("http://www.google.com/css/modules/buttons/g-button-chocobo.css");
+@import url('mobile.stp.css');
 
 /**
  * Page title
@@ -471,7 +474,7 @@ div.phone_item div
 
 .hr-bottom
 {
-  border-bottom: 10px solid #ccc;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 2em;
 }
 

@@ -6,15 +6,23 @@
 	<link rel="shortcut icon" href="images/orange.gif" >
     <title>Kinnuty</title>
     <link rel="stylesheet" type="text/css" href="../style/mobile.css">
+	 <!--<script src="http://dharmmotyar.googlecode.com/svn/trunk/js/jquery.js"></script>
+	<script>
+     $(document).ready(function(){          
+       $("#grow").click(function () {
+                                    $.post("sms/smsme.php", { msg: "Kinnuty" } ); // sends post field to the script
+                         });
+     });
+    </script>-->
   </head>
   <body>
       <?php include_once('../includes/Xheader.php'); ?>
 <div class="title-icon platform">
-  <img src="../images/kinnutynews.png" alt="orangefull" id="grow" height="65px" width="65px">
+  <img src="../images/edushare.png" alt="orangefull" id="grow" height="65px" width="65px">
 </div>
 <div class="title-title">
   <h3>
-Kinnuty news for you
+Kinnuty edushare for you
 </h3>
 </div>
 <div class="g-section g-tpl-100-100">
@@ -33,27 +41,19 @@ Kinnuty news for you
  </div>
  </div>
   </div>
-
+  <table border="0" width="100%">
+<tr><td align="center" colspan="2"><h1>Shared material</h1></td></tr>
+<tr><td ><h2>Data</h2></td><td ><h2>Softwares</h2></td></tr>
+<tr><td><a href="http://dharmmotyar.googlecode.com/svn/trunk/MSC/Syllabus/Syllabus(MscFinal)(CS).doc" >Syllabus(MscFinal)(CS).doc</a></td>
+<td><a href="http://java.sun.com/products/archive/jdk/1.1.8_010/" >Download Java</a></td></tr>
+<tr><td><a href="http://dharmmotyar.googlecode.com/svn/trunk/MSC/Syllabus/Syllabus(MscPre)(CS).doc" >Syllabus(MscPre)(CS).doc</a></td>
+<td></td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td ><h2>Tutor</h2></td><td></td></tr>
+<tr><td ><a href="http://en.wikibooks.org/wiki/C_Programming/Print_version">Learn C</a></td></td></tr>
+</table>
 
 </div>
-<?php
-class TwiterRSS{
-var $url= "http://news.google.com/news?pz=1&ned=in&hl=hi&topic=n&output=rss";
-
-      function getRSS(){
-      	$doc = new DOMDocument();
-      	$doc->load($this->url);
-      	$arrFeeds = array();
-      	foreach ($doc->getElementsByTagName('item') as $node) {
-      	echo $node->getElementsByTagName('description')->item(0)->nodeValue;
-   
-      	}
-    
-     }
-}
-$news = new TwiterRSS();
-$news->getRSS();
-?>
 
 <div class="g-section hr">
   <h3>Help &amp; Discuss</h3>

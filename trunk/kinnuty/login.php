@@ -7,12 +7,14 @@ if(isset($_POST['pass'])){
 	//print_r($userinfo); exit;
 	if(isset($userinfo[0]['id']) && $userinfo[0]['id']!=''){
 		$_SESSION['user_id'] = $userinfo[0]['id'];
-			echo '<script>javascript:window.location.href="profile.php";</script>';
+		echo "error:";
+			//echo '<script>javascript:window.location.href="profile.php";</script>';
 		
 	}
 	else{
-	
-	echo '<script>javascript:window.location.href="login.php?error=true";</script>';
+		//echo "error:";
+	 echo '<script>javascript:document.getElementById("error").visibility="visible";</script>';
+	//echo '<script>javascript:window.location.href="login.php?error=true";</script>';
 	}
   }
 	
@@ -20,18 +22,15 @@ if(isset($_POST['pass'])){
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
-<title>KinnuTy Login</title>
 </head>
 <body>
+<div style="visibility : hidden;" id="error">Error</div>
   <form id="Form1" name="Form1" action="login.php" method="post">
-
-                        User Name
-                        <input class="textbox340" name="userid" id="userid" value="" type="text">
-			
-                        Password
-                        <input class="textbox340" name="pass" id="txtPassword" value="" type="password">
-			   
-			        <input alt="Login" type="submit">
+  User Name:
+  <input class="textbox340" name="userid" id="userid" value="" type="text"><br />
+  Password:&nbsp;&nbsp;
+  <input class="textbox340" name="pass" id="txtPassword" value="" type="password"><br />
+  <input alt="Login" type="submit"><br />
 			    
                     <a href="">Lost your password?</a>
                    
