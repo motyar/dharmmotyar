@@ -33,7 +33,7 @@
  * @param url - url to icon image
  * @param callback - function to call (optional)
  */
-function PieMenuIcon( url, callback )
+function PieMenuIconX( url, callback )
 {
 	/**
 	 * X position of icon
