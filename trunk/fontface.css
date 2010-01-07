@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'GothicCustom';
+  src: url("LeagueGothic.eot");
+  src: local('League Gothic'),
+        url("LeagueGothic.otf") format('opentype'),
+		url("leaguegothic.svg#lg") format('svg');
+}
